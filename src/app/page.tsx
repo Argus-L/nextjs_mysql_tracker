@@ -1,13 +1,8 @@
 import prisma from "../lib/prisma";
 import DeleteButton from "@/components/DeleteButton";
-import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 
-export async function getServerSideProps() {
+export default async function Home() {
   const jobBoard = await prisma.jobs.findMany();
-  return { props: { jobBoard } };
-}
-
-export default async function Home({ jobBoard }: any) {
   return (
     <div className="feed">
       {jobBoard.map((jobs: any) => (
