@@ -5,7 +5,7 @@ export default async function Home() {
   const jobBoard = await prisma.jobs.findMany();
   return (
     <div className="feed">
-      {jobBoard.map((jobs: any) => (
+      {jobBoard.map((jobs) => (
         <div key={jobs.id} className="jobPost">
           <h2>{jobs.title}</h2>
           <div>
