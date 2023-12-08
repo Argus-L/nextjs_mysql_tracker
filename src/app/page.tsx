@@ -1,6 +1,5 @@
 import prisma from "../lib/prisma";
 import DeleteButton from "@/components/DeleteButton";
-//import RouteConfig from "@/components/RouteConfig";
 export const dynamic = "force-dynamic";
 export const revalidate = "0";
 
@@ -9,6 +8,7 @@ export default async function Home() {
   console.log("TESTING");
   return (
     <div className="feed">
+      {jobBoard.length}
       {jobBoard.map((jobs) => (
         <div key={jobs.id} className="jobPost">
           <h2>{jobs.title}</h2>
