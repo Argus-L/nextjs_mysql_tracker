@@ -1,5 +1,6 @@
 import prisma from "../lib/prisma";
 import DeleteButton from "@/components/DeleteButton";
+import RouteConfig from "@/components/RouteConfig";
 
 export default async function Home() {
   const jobBoard = await getData();
