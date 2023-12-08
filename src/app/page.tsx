@@ -1,9 +1,11 @@
 import prisma from "../lib/prisma";
 import DeleteButton from "@/components/DeleteButton";
-import RouteConfig from "@/components/RouteConfig";
+//import RouteConfig from "@/components/RouteConfig";
+export const dynamic = "force-dynamic";
+export const revalidate = "0";
 
 export default async function Home() {
-  const jobBoard = await getData();
+  const jobBoard = await prisma.jobs.findMany();
   console.log("TESTING");
   return (
     <div className="feed">
@@ -22,10 +24,4 @@ export default async function Home() {
       ))}
     </div>
   );
-}
-
-export async function getData() {
-  const data = await prisma.jobs.findMany();
-
-  return data;
 }
