@@ -2,7 +2,8 @@ import prisma from "../lib/prisma";
 import DeleteButton from "@/components/DeleteButton";
 
 export default async function Home() {
-  const jobBoard = await prisma.jobs.findMany();
+  const jobBoard = await getData();
+  console.log("TESTING");
   return (
     <div className="feed">
       {jobBoard.map((jobs) => (
@@ -20,4 +21,10 @@ export default async function Home() {
       ))}
     </div>
   );
+}
+
+export async function getData() {
+  const data = await prisma.jobs.findMany();
+
+  return data;
 }

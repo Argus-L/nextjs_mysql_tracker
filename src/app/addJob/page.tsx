@@ -20,6 +20,7 @@ export default function AddJob() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
+      console.log(body);
       router.push("/");
       router.refresh();
     } catch (error) {
