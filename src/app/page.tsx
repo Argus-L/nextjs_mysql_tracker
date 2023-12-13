@@ -8,7 +8,7 @@ export default async function Home() {
   console.log("TESTING");
   return (
     <div className="feed">
-      {jobBoard.length}
+      Number of jobs: {jobBoard.length}
       {jobBoard.map((jobs) => (
         <div key={jobs.id} className="jobPost">
           <h2>{jobs.title}</h2>
